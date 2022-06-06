@@ -21,12 +21,30 @@
     <ClCompile Include="LatinEngine\Base\Application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="LatinEngine\OpenGL\Window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LatinEngine\Base\TimeStep.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LatinEngine\Base\Input.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LatinEngine\Latin.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="LatinEngine\Base\Application.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LatinEngine\OpenGL\Window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LatinEngine\Base\TimeStep.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LatinEngine\Base\Input.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

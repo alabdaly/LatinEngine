@@ -25,7 +25,7 @@ namespace LATIN
 		GLFWwindow* GetWindow() { return m_Window; }
 	private:
 		static Window* s_Instance;
-		GLFWwindow* m_Window;
+		GLFWwindow* m_Window = nullptr;
 
 		struct WindowData
 		{
