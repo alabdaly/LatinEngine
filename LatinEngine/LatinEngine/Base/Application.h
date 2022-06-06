@@ -1,6 +1,6 @@
 #pragma once
 #include <stdint.h>
-
+#include "../OpenGL/Window.h"
 namespace LATIN
 {
 	class Application
@@ -13,6 +13,7 @@ namespace LATIN
 		virtual void OnExit() {}
 
 	private:
+		Window m_Window;
 		bool b_Run = true;
 	};
 }
