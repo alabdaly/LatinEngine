@@ -9,7 +9,8 @@ namespace LATIN
 	{
 		uint32_t width, height;
 		const char* title;
-		bool fullscreen;
+		bool fullscreen = false;
+		bool Vsync = false;
 	};
 
 	class Window

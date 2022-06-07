@@ -30,6 +30,24 @@
     <ClCompile Include="LatinEngine\Base\Input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="LatinEngine\OpenGL\Buffers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LatinEngine\OpenGL\Texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LatinEngine\OpenGL\Shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LatinEngine\OpenGL\Renderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LatinEngine\Base\Camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LatinEngine\OpenGL\Animation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LatinEngine\Latin.h">
@@ -47,5 +65,26 @@
     <ClInclude Include="LatinEngine\Base\Input.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="LatinEngine\OpenGL\Buffers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LatinEngine\OpenGL\Texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LatinEngine\OpenGL\Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LatinEngine\OpenGL\Renderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LatinEngine\Base\Camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LatinEngine\OpenGL\Animation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Shaders\shader.shader" />
   </ItemGroup>
 </Project>

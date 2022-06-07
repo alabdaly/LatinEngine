@@ -44,12 +44,14 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LinkIncremental>true</LinkIncremental>
+    <LinkIncremental>
+    </LinkIncremental>
     <OutDir>..\Bin\Excutables\$(Configuration)\</OutDir>
     <IntDir>..\Bin\LeftOvers\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <LinkIncremental>false</LinkIncremental>
+    <LinkIncremental>
+    </LinkIncremental>
     <OutDir>..\Bin\Excutables\$(Configuration)\</OutDir>
     <IntDir>..\Bin\LeftOvers\$(Configuration)\</IntDir>
   </PropertyGroup>
@@ -57,12 +59,15 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>LN_DEBUG;_CRT_SECURE_NO_WARNINGS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)Includes</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glfw3.lib;glad.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)Libraries</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -71,7 +76,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir)Includes</AdditionalIncludeDirectories>
     </ClCompile>
@@ -86,17 +91,32 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="LatinEngine\Base\Application.cpp" />
+    <ClCompile Include="LatinEngine\Base\Camera.cpp" />
     <ClCompile Include="LatinEngine\Base\Input.cpp" />
     <ClCompile Include="LatinEngine\Base\TimeStep.cpp" />
+    <ClCompile Include="LatinEngine\OpenGL\Animation.cpp" />
+    <ClCompile Include="LatinEngine\OpenGL\Buffers.cpp" />
+    <ClCompile Include="LatinEngine\OpenGL\Renderer.cpp" />
+    <ClCompile Include="LatinEngine\OpenGL\Shader.cpp" />
+    <ClCompile Include="LatinEngine\OpenGL\Texture.cpp" />
     <ClCompile Include="LatinEngine\OpenGL\Window.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LatinEngine\Base\Application.h" />
+    <ClInclude Include="LatinEngine\Base\Camera.h" />
     <ClInclude Include="LatinEngine\Base\Input.h" />
     <ClInclude Include="LatinEngine\Base\TimeStep.h" />
     <ClInclude Include="LatinEngine\Latin.h" />
+    <ClInclude Include="LatinEngine\OpenGL\Animation.h" />
+    <ClInclude Include="LatinEngine\OpenGL\Buffers.h" />
+    <ClInclude Include="LatinEngine\OpenGL\Renderer.h" />
+    <ClInclude Include="LatinEngine\OpenGL\Shader.h" />
+    <ClInclude Include="LatinEngine\OpenGL\Texture.h" />
     <ClInclude Include="LatinEngine\OpenGL\Window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Shaders\shader.shader" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

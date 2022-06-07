@@ -1,22 +1,27 @@
 #pragma once
 #include "LatinEngine/Latin.h"
-#include "glad/glad.h"
+
 class Game : public LATIN::Application
 {
 public:
 	void Start() override
 	{
-
+		texture.Create({ "Assets/Textures/UwU.png" });
+		animation.Create({ {0, 7, 0.016f} }, 7);
 	}
 
 	void Update() override
 	{
-		glClear(GL_COLOR_BUFFER_BIT);
-		LATIN::Input::GetKey(0).Held ? glClearColor(1, 1, 1, 1) : glClearColor(0, 0, 0, 1);
-		
+		animation.Update();
+		LATIN::Input::GetKey(0).Held ? LATIN::Renderer::Clear({ 1, 1, 1 }) : LATIN::Renderer::Clear({ 0, 0, 0 });
+		LATIN::RenderData data;
+		data.texture = &texture;
+		data.animation = &animation;
+		LATIN::Renderer::DrawQuad(data);
 	}
 private:
-
+	LATIN::Texture texture;
+	LATIN::Animation animation;
 };
 
 int main()
