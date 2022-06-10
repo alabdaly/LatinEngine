@@ -10,9 +10,13 @@ namespace LATIN
 
 	struct TextureData
 	{
-		const char* Path;
+		const char* Path = nullptr;
 		Filtering MinFilter = Filtering::Nearest;
 		Filtering MagFilter = Filtering::Nearest;
+
+		unsigned char* data = nullptr;
+		int width = 0;
+		int height = 0;
 	};
 
 	class Texture

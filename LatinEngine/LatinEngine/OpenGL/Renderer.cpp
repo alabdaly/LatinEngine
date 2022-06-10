@@ -138,9 +138,9 @@ namespace LATIN
 		}
 		
 		float texID = 0.0f;
-		glm::vec2 TexCoordMin = { 0.0f, 0.0f };
-		glm::vec2 TexCoordMax = { 1.0f, 1.0f };
-
+		glm::vec2 TexCoordMin = data.TexCoordsMin;
+		glm::vec2 TexCoordMax = data.TexCoordsMax;
+		
 		if (data.texture)
 		{
 			for (uint32_t i = 1; i < s_Data.TextureSlotIndex; i++)
@@ -157,18 +157,6 @@ namespace LATIN
 				texID = (float)s_Data.TextureSlotIndex;
 				s_Data.Textures[s_Data.TextureSlotIndex] = data.texture;
 				s_Data.TextureSlotIndex++;
-			}
-
-			if (data.animation)
-			{
-				Animation animation = *data.animation;
-				TexCoordMin.x = animation.GetCurrentRow() / (float)animation.GetMaxRows();
-				TexCoordMax.x = (animation.GetCurrentRow() + 1) / (float)animation.GetMaxRows();
-
-				TexCoordMin.y = animation.GetCurrentColumn() / (float)animation.GetMaxColumns();
-				TexCoordMax.y = (animation.GetCurrentColumn() + 1) / (float)animation.GetMaxColumns();
-
-				printf("%d %d | %d %d\n", animation.GetCurrentRow(), animation.GetMaxRows(), animation.GetCurrentColumn(), animation.GetMaxColumns());
 			}
 		}
 

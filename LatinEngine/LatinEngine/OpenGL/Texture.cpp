@@ -8,14 +8,28 @@ namespace LATIN
 {
 	void Texture::Create(const TextureData& data)
 	{
-		int width = 0, height = 0;
-		unsigned char* buffer = stbi_load(data.Path, &width, &height, 0, 4);
+		unsigned char* buffer;
+		int width;
+		int height;
 
-		if (!buffer)
+		if (data.Path)
 		{
-			printf("Failed to find texture: %s", data.Path);
-			return;
+			buffer = stbi_load(data.Path, &width, &height, 0, 4);
+
+			if (!buffer)
+			{
+				printf("Failed to find texture: %s", data.Path);
+				return;
+			}
 		}
+		else
+		{
+			buffer = data.data;
+			width = data.width;
+			height = data.height;
+		}
+
+		
 
 		glGenTextures(1, &m_RendererID);
 		glBindTexture(GL_TEXTURE_2D, m_RendererID);

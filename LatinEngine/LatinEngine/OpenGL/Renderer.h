@@ -15,7 +15,9 @@ namespace LATIN
 		glm::vec2 Scale = {1, 1};
 		glm::vec4 Color = { 1, 1, 1, 1 };
 		Texture* texture = nullptr;
-		Animation* animation = nullptr;
+		//Animation* animation = nullptr;
+		glm::vec2 TexCoordsMin = {0.0f, 0.0f};
+		glm::vec2 TexCoordsMax = {1.0f, 1.0f};
 	};
 	class Renderer
 	{
